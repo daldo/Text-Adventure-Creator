@@ -32,8 +32,17 @@ function App() {
         </main>
       </div>
       
-      {/* Powered by Bolt Badge */}
-      <footer className="py-4 flex justify-center">
+      {/* Footer with Disclaimer and Badge */}
+      <footer className="py-6 flex flex-col items-center gap-4">
+        {/* Public Domain Disclaimer */}
+        <div className="text-center px-4">
+          <p className="text-xs text-gray-500 dark:text-gray-400 max-w-md leading-relaxed">
+            🌐 <strong>Public Domain:</strong> This application and its generated content are released to the public domain. 
+            You are free to use, modify, and distribute this work without restriction.
+          </p>
+        </div>
+        
+        {/* Powered by Bolt Badge */}
         <a 
           href="https://bolt.new" 
           target="_blank" 
