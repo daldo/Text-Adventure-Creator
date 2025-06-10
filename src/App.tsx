@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGameStore } from './store/gameStore';
 import { useThemeStore } from './store/themeStore';
 import Header from './components/Header';
 import StartScreen from './components/StartScreen';
 import GameDisplay from './components/GameDisplay';
 import ApiKeyModal from './components/ApiKeyModal';
+import DisclaimerModal from './components/DisclaimerModal';
 
 function App() {
   const { isPlaying, showApiKeyModal, setShowApiKeyModal } = useGameStore();
   const { theme, toggleTheme } = useThemeStore();
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
   
   // Apply theme to document
   useEffect(() => {
@@ -36,10 +38,16 @@ function App() {
       <footer className="py-6 flex flex-col items-center gap-4">
         {/* Public Domain Disclaimer */}
         <div className="text-center px-4">
-          <p className="text-xs text-gray-500 dark:text-gray-400 max-w-md leading-relaxed">
+          <p className="text-xs text-gray-500 dark:text-gray-400 max-w-md leading-relaxed mb-2">
             🌐 <strong>Public Domain:</strong> This application and its generated content are released to the public domain. 
             You are free to use, modify, and distribute this work without restriction.
           </p>
+          <button
+            onClick={() => setShowDisclaimer(true)}
+            className="text-xs text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 underline transition-colors"
+          >
+            Read Full Disclaimer & Terms
+          </button>
         </div>
         
         {/* Powered by Bolt Badge */}
@@ -65,6 +73,11 @@ function App() {
           // After successful API key setup, we can proceed with the game
           setShowApiKeyModal(false);
         }}
+      />
+      
+      <DisclaimerModal 
+        isOpen={showDisclaimer}
+        onClose={() => setShowDisclaimer(false)}
       />
     </div>
   );
