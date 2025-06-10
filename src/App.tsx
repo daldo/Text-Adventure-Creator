@@ -6,6 +6,7 @@ import StartScreen from './components/StartScreen';
 import GameDisplay from './components/GameDisplay';
 import ApiKeyModal from './components/ApiKeyModal';
 import DisclaimerModal from './components/DisclaimerModal';
+import { Github, ExternalLink } from 'lucide-react';
 
 function App() {
   const { isPlaying, showApiKeyModal, setShowApiKeyModal } = useGameStore();
@@ -34,8 +35,23 @@ function App() {
         </main>
       </div>
       
-      {/* Footer with Disclaimer and Badge */}
-      <footer className="py-6 flex flex-col items-center gap-4">
+      {/* Footer with Disclaimer, GitHub Link, and Badge */}
+      <footer className="py-6 flex flex-col items-center gap-6">
+        {/* GitHub Repository Link */}
+        <div className="flex items-center gap-4">
+          <a 
+            href="https://github.com/daldo/Text-Adventure-Creator" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+            aria-label="View source code on GitHub"
+          >
+            <Github size={18} className="group-hover:scale-110 transition-transform duration-200" />
+            <span className="text-sm font-medium">View on GitHub</span>
+            <ExternalLink size={14} className="opacity-60" />
+          </a>
+        </div>
+
         {/* Public Domain Disclaimer */}
         <div className="text-center px-4">
           <p className="text-xs text-gray-500 dark:text-gray-400 max-w-md leading-relaxed mb-2">
