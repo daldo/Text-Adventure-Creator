@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for content highlighting */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.005);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out;
+}
+
+/* Smooth scrolling for all scroll containers */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Scroll margin for better positioning */
+.scroll-mt-4 {
+  scroll-margin-top: 1rem;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .animate-pulse-subtle {
+    animation: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Enhanced focus styles for accessibility */
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast for highlighted content */
+.dark .bg-gradient-to-r.from-purple-900\/40.via-blue-900\/20.to-purple-900\/40 {
+  background: linear-gradient(to right, rgba(88, 28, 135, 0.4), rgba(30, 58, 138, 0.2), rgba(88, 28, 135, 0.4));
+}
+
+/* Custom scrollbar styling for better UX */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Force hardware acceleration for smooth scrolling */
+.scroll-smooth {
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0);
+}
+
+/* Debug styles for development */
+.debug-scroll {
+  border: 2px dashed red !important;
+}
