@@ -44,7 +44,7 @@ function App() {
           <img 
             src="/black_circle_360x360.png" 
             alt="Powered by Bolt" 
-            className="w-16 h-16 transition-transform duration-200 group-hover:rotate-3"
+            className="w-32 h-32 transition-transform duration-200 group-hover:rotate-3"
           />
         </a>
       </footer>
