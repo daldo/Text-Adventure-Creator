@@ -9,6 +9,8 @@ You know the feeling: sitting on the train, half-awake, not in the mood for doom
 **Text Adventure Creator** generates a personalized text adventure in seconds based on your selected genres (Sci-Fi, Fantasy, Horror, etc.). Optionally, you can add a custom setting (e.g., “abandoned space station” or “medieval tavern”) and the app builds an instant story for you.
 It runs on any device, only needs your **OpenAI API key** (stored locally in your browser), and you're good to go – **no backend, no login, no delays**.
 
+[Preview on YouTube.com®]([https://link-url-here.org](https://www.youtube.com/shorts/t-7m2EKbwlw))
+
 ## 🛠️ How we built it
 
 * **Frontend** using React + Tailwind
